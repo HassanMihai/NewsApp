@@ -1,2 +1,2 @@
 # NewsApp for Google Challenge Scholarship: Android Basics
-Using <a href="http://open-platform.theguardian.com/documentation/">Guardian API</a>
+Using <a href="http://open-platform.theguardian.com/documentation/" target="_blank">Guardian API</a>
