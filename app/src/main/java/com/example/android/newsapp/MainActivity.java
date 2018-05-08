@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private static final String GUARDIAN_REQUEST_URL =
             "https://content.guardianapis.com/technology?api-key=test&show-tags=contributor&page-size=20";
 
-    private static final String LOG_TAG = MainActivity.class.getName();
-
     /** TextView that is displayed when the list is empty */
     private TextView mEmptyStateTextView;
 
