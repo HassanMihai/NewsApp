@@ -160,21 +160,19 @@ public class QueryUtils {
                 // Get a single news at position i within the list of news
                 JSONObject currentNews = newsArray.getJSONObject(i);
 
-                // Extract the value for the key called "mag"
+                // Extract the value for the key called "webTitle"
                 String title = currentNews.getString("webTitle");
 
-                // Extract the value for the key called "place"
+                // Extract the value for the key called "sectionName"
                 String sectionName = currentNews.getString("sectionName");
 
                 String author = null;
 
                 JSONArray tagsArray = currentNews.getJSONArray("tags");
 
-                if (tagsArray.length() > 0) {
-                    for (int t = 0; t < tagsArray.length(); t++) {
-                        JSONObject tagsObject = tagsArray.getJSONObject(t);
-                        author = tagsObject.getString("webTitle");
-                    }
+                for (int t = 0; t < tagsArray.length(); t++) {
+                    JSONObject tagsObject = tagsArray.getJSONObject(t);
+                    author = tagsObject.getString("webTitle");
                 }
 
                 String dateTime = currentNews.getString("webPublicationDate");
@@ -182,8 +180,8 @@ public class QueryUtils {
                 // Extract the value for the key called "url"
                 String url = currentNews.getString("webUrl");
 
-                // Create a new {@link News} object with the magnitude, location, time,
-                // and url from the JSON response.
+                // Create a new {@link News} object with the title, sectionName, author,
+                // dateTime and url from the JSON response.
                 News news = new News(title, sectionName, author, dateTime, url);
 
                 // Add the new {@link News} to the list of news.
