@@ -1,25 +1,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingEnd="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingStart="16dp">
+    android:paddingEnd="@dimen/padding16"
+    android:paddingLeft="@dimen/padding16"
+    android:paddingRight="@dimen/padding16"
+    android:paddingStart="@dimen/padding16">
 
     <TextView
         android:id="@+id/section"
+        android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
+        android:textSize="@dimen/section_text_size"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="@dimen/text_view_margin_bottom" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:textSize="16sp"
+        android:layout_marginBottom="@dimen/padding16"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/title_text_size"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -29,12 +31,14 @@
 
         <TextView
             android:id="@+id/author"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/zero_dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2" />
+            android:layout_weight="2"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/author_text_size" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="@dimen/zero_dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
@@ -43,15 +47,17 @@
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp" />
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/datetime_text_size" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginStart="3dp"
-                android:textSize="12sp" />
+                android:textColor="@color/colorSecondaryText"
+                android:layout_marginLeft="@dimen/date_margin_left"
+                android:layout_marginStart="@dimen/date_margin_left"
+                android:textSize="@dimen/datetime_text_size" />
 
         </LinearLayout>
 

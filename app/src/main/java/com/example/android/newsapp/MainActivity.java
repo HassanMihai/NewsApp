@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
     /** URL for news data from the Guardian API */
     private static final String GUARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/technology?api-key=test&show-tags=contributor";
+            "https://content.guardianapis.com/technology?api-key=test&show-tags=contributor&page-size=20";
 
     private static final String LOG_TAG = MainActivity.class.getName();
 
