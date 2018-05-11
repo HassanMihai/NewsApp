@@ -23,6 +23,10 @@
     <string name="settings_section_by_science_label">Science</string>
     <string name="settings_section_by_science_value" translatable="false">science</string>
 
+    <!-- Label for section environment option [CHAR LIMIT=20] -->
+    <string name="settings_section_by_environment_label">Environment</string>
+    <string name="settings_section_by_environment_value" translatable="false">environment</string>
+
     <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
     <string name="settings_order_by_label">Order by</string>
     <string name="settings_order_by_key" translatable="false">order_by</string>
