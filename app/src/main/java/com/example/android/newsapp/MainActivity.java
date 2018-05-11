@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private static final String GUARDIAN_REQUEST_URL =
                 "https://content.guardianapis.com/search?section=";
 
-    private static final String GUARDIAN_API_KEY = "788582ee-c610-45a7-a451-c895a4cc35fd";
+    private static final String GUARDIAN_API_KEY = "test";
 
     private static final String GUARDIAN_SHOW_TAGS = "contributor";
 

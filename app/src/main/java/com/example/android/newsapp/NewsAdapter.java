@@ -92,6 +92,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         if (newsTime != null) {
             // Display the time of the current News in that TextView
+            newsTime = newsTime.substring(0, newsTime.length() -3);
             timeView.setText(newsTime);
         } else {
             timeView.setVisibility(View.GONE);
