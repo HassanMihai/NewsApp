@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="padding16">16dp</dimen>
-    <dimen name="text_view_margin_bottom">10dp</dimen>
+    <dimen name="title_view_margin">10dp</dimen>
     <dimen name="date_margin_left">3dp</dimen>
     <dimen name="zero_dp">0dp</dimen>
     <dimen name="title_text_size">16sp</dimen>

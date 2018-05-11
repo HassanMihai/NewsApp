@@ -3,6 +3,8 @@ package com.example.android.newsapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -79,8 +81,15 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 // Create a new intent to view the news URI
                 Intent websiteIntent = new Intent(Intent.ACTION_VIEW, newsUri);
 
-                // Send the intent to launch a new activity
-                startActivity(websiteIntent);
+                // Verify it resolves
+                PackageManager packageManager = getPackageManager();
+                List<ResolveInfo> activities = packageManager.queryIntentActivities(websiteIntent, 0);
+                boolean isIntentSafe = activities.size() > 0;
+
+                // Start an activity if it's safe
+                if (isIntentSafe) {
+                    startActivity(websiteIntent);
+                }
             }
         });
 
@@ -132,13 +141,13 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         // Append query parameter and its value
-        uriBuilder.appendQueryParameter("section", section);
-        uriBuilder.appendQueryParameter("show-tags", GUARDIAN_SHOW_TAGS);
-        uriBuilder.appendQueryParameter("page-size", GUARDIAN_PAGE_SIZE);
-        uriBuilder.appendQueryParameter("order-by", orderBy);
-        uriBuilder.appendQueryParameter("api-key", GUARDIAN_API_KEY);
+        uriBuilder.appendQueryParameter(getString(R.string.guardian_section), section);
+        uriBuilder.appendQueryParameter(getString(R.string.guardian_show_tags), GUARDIAN_SHOW_TAGS);
+        uriBuilder.appendQueryParameter(getString(R.string.guardian_page_size), GUARDIAN_PAGE_SIZE);
+        uriBuilder.appendQueryParameter(getString(R.string.guardian_order_by), orderBy);
+        uriBuilder.appendQueryParameter(getString(R.string.guardian_api_key), GUARDIAN_API_KEY);
 
-        // Return the completed uri `http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=10&minmag=minMagnitude&orderby=time
+        // Return the completed uri
         return new NewsLoader(this, uriBuilder.toString());
     }
 

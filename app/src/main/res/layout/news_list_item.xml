@@ -1,66 +1,64 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingEnd="@dimen/padding16"
-    android:paddingLeft="@dimen/padding16"
-    android:paddingRight="@dimen/padding16"
-    android:paddingStart="@dimen/padding16">
+    android:padding="@dimen/padding16">
 
     <TextView
         android:id="@+id/section"
-        android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
-        android:textSize="@dimen/section_text_size"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/text_view_margin_bottom" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/section_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/padding16"
+        android:layout_marginBottom="@dimen/title_view_margin"
+        android:layout_marginTop="@dimen/title_view_margin"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/title_text_size"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/author"
+        app:layout_constraintStart_toStartOf="@+id/section"
+        app:layout_constraintTop_toBottomOf="@+id/section" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/author_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
-        <TextView
-            android:id="@+id/author"
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:textColor="@color/colorSecondaryText"
-            android:textSize="@dimen/author_text_size" />
 
-        <LinearLayout
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/datetime_text_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/author"
+        app:layout_constraintEnd_toStartOf="@+id/date"
+        app:layout_constraintStart_toEndOf="@+id/author" />
 
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/datetime_text_size" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/date_margin_left"
+        android:layout_marginStart="@dimen/date_margin_left"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/datetime_text_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/time" />
 
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorSecondaryText"
-                android:layout_marginLeft="@dimen/date_margin_left"
-                android:layout_marginStart="@dimen/date_margin_left"
-                android:textSize="@dimen/datetime_text_size" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
