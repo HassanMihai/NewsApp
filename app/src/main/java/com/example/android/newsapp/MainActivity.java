@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
     private static final String GUARDIAN_SHOW_TAGS = "contributor";
 
+    private static final String GUARDIAN_THUMBNAIL = "thumbnail";
+
     private static final String GUARDIAN_PAGE_SIZE = "20";
 
     /** TextView that is displayed when the list is empty */
@@ -144,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         uriBuilder.appendQueryParameter(getString(R.string.guardian_section), section);
         uriBuilder.appendQueryParameter(getString(R.string.guardian_show_tags), GUARDIAN_SHOW_TAGS);
         uriBuilder.appendQueryParameter(getString(R.string.guardian_page_size), GUARDIAN_PAGE_SIZE);
+        uriBuilder.appendQueryParameter(getString(R.string.guardian_fields), GUARDIAN_THUMBNAIL);
         uriBuilder.appendQueryParameter(getString(R.string.guardian_order_by), orderBy);
         uriBuilder.appendQueryParameter(getString(R.string.guardian_api_key), GUARDIAN_API_KEY);
 

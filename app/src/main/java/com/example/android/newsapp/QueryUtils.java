@@ -175,6 +175,14 @@ public class QueryUtils {
                     author = tagsObject.getString("webTitle");
                 }
 
+                String thumbnail = null;
+
+                JSONObject fieldsObject = currentNews.getJSONObject("fields");
+
+                if (fieldsObject.has("thumbnail")) {
+                    thumbnail = fieldsObject.getString("thumbnail");
+                }
+
                 String dateTime = currentNews.getString("webPublicationDate");
 
                 // Extract the value for the key called "url"
@@ -182,7 +190,7 @@ public class QueryUtils {
 
                 // Create a new {@link News} object with the title, sectionName, author,
                 // dateTime and url from the JSON response.
-                News news = new News(title, sectionName, author, dateTime, url);
+                News news = new News(title, sectionName, author, dateTime, url, thumbnail);
 
                 // Add the new {@link News} to the list of news.
                 allNews.add(news);

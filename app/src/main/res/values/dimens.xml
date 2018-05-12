@@ -8,4 +8,5 @@
     <dimen name="datetime_text_size">12sp</dimen>
     <dimen name="author_text_size">12sp</dimen>
     <dimen name="section_text_size">14sp</dimen>
+    <dimen name="image_height">150dp</dimen>
 </resources>

@@ -7,7 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
@@ -44,6 +48,18 @@ public class NewsAdapter extends ArrayAdapter<News> {
         TextView titleView = (TextView) listItemView.findViewById(R.id.title);
         // Display the title of the current News in that TextView
         titleView.setText(currentNews.getTitle());
+
+        ImageView thumbnailView = (ImageView) listItemView.findViewById(R.id.thumbnail);
+        if (currentNews.getThumbnail() != null) {
+            //Gets, and sets the image to the view. Thanks Glide!
+            Glide.with(getContext())
+                    .load(currentNews.getThumbnail())
+                    .apply(new RequestOptions()
+                            .dontTransform())
+                    .into(thumbnailView);
+        } else {
+            thumbnailView.setVisibility(View.GONE);
+        }
 
         // Find the TextView with view ID section
         TextView sectionView = (TextView) listItemView.findViewById(R.id.section);

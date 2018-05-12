@@ -1,5 +1,6 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,7 +13,17 @@
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/section_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/thumbnail" />
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/image_height"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/image_description"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/section" />
 
     <TextView
         android:id="@+id/title"
@@ -24,8 +35,8 @@
         android:textSize="@dimen/title_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/author"
-        app:layout_constraintStart_toStartOf="@+id/section"
-        app:layout_constraintTop_toBottomOf="@+id/section" />
+        app:layout_constraintStart_toStartOf="@+id/thumbnail"
+        app:layout_constraintTop_toBottomOf="@+id/thumbnail" />
 
     <TextView
         android:id="@+id/author"

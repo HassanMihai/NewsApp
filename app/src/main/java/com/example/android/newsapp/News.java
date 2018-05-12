@@ -16,12 +16,16 @@ public class News {
     /** Website URL of the news */
     private String mUrl;
 
-    public News(String title, String sectionName, String author, String dateTime, String url) {
+    /** Thumbnail of the news */
+    private String mThumbnail;
+
+    public News(String title, String sectionName, String author, String dateTime, String url, String thumbnail) {
         mTitle = title;
         mSectionName = sectionName;
         mAuthor = author;
         mDateTime = dateTime;
         mUrl = url;
+        mThumbnail = thumbnail;
     }
 
     public String getTitle() {
@@ -42,5 +46,9 @@ public class News {
 
     public String getUrl() {
         return mUrl;
+    }
+
+    public String getThumbnail() {
+        return mThumbnail;
     }
 }
